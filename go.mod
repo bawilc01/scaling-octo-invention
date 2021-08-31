@@ -1,3 +1,3 @@
-module github.com/scaling-octo-invention
+module github.com/pluralsight/scaling-octo-invention
 
 go 1.17
