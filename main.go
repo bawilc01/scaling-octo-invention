@@ -13,13 +13,16 @@ func main() {
 	port := 3000
 
 	// pass in port variable as teh function argument
-	startWebServer(port)
+	startWebServer(port, 2)
 }
 
 // declares variable and type for port as function argument
-func startWebServer(port int) {
+func startWebServer(port int, numberOfRetries int) {
 	fmt.Println(("Starting server..."))
 	// do server stuff
 	// print text with port that is being listened
 	fmt.Println("Server started on port", port)
+
+	//number of retries if port doesn't start on first try
+	fmt.Println("Number of retries", numberOfRetries)
 }
