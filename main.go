@@ -2,7 +2,6 @@ package main
 
 // import block
 import (
-	"errors"
 	"fmt"
 )
 
@@ -16,20 +15,20 @@ func main() {
 	port := 3000
 
 	// pass in port variable as the function argument
-	// bool returned from function whether server started or not; printed here as err if error is returned
-	err := startWebServer(port, 2)
+	// ignore returned port; only get actual error if error happens
+	_, err := startWebServer(port)
 	fmt.Println(err)
 
 }
 
 // declares variable and type for port as function argument
-func startWebServer(port int, numberOfRetries int) error {
+// returns as error (for now)
+func startWebServer(port int) (int, error) {
 	fmt.Println(("Starting server..."))
-	// do server stuff
+	// do server stuffß
 	// print text with port that is being listened
 	fmt.Println("Server started on port", port)
 
-	//number of retries if port doesn't start on first try
-	fmt.Println("Number of retries", numberOfRetries)
-	return errors.New("Something went wrong.")
+	//port number and error returned from second var in function (not arg)
+	return port, nil
 }
