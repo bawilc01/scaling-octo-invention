@@ -9,11 +9,17 @@ Helpful links: https://grpc.io/docs/languages/go/basics/
 */
 func main() {
 	fmt.Println("Hello there.")
-	startWebServer()
+	//create port variable and set port on which to listen
+	port := 3000
+
+	// pass in port variable as teh function argument
+	startWebServer(port)
 }
 
-func startWebServer() {
+// declares variable and type for port as function argument
+func startWebServer(port int) {
 	fmt.Println(("Starting server..."))
 	// do server stuff
-	fmt.Println("Server started")
+	// print text with port that is being listened
+	fmt.Println("Server started on port", port)
 }
